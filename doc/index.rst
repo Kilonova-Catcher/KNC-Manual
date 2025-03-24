@@ -9,14 +9,9 @@ User Guide
 .. toctree::
    :maxdepth: 3
 
-   checklist
-   sign-up
-   shift-enrollment
-   shift-communication
-   shift-checklist
-   alerts
-   received
-   observation-plan
+   kilonova-theory
+   image-theory
+   preprocessing-theory
 
 .. Indices and tables
 .. ==================
