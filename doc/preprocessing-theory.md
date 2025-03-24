@@ -1,12 +1,16 @@
 ## Preprocessing: Cleaning Your Raw Images
 
-When you take a raw image through your telescope, it might look beautiful at first glance — but beneath the surface are many invisible issues caused by your camera’s electronics, the telescope optics, or even dust on your sensor. These artifacts can affect the accuracy of your measurements or hide faint sources like kilonovae entirely.
+When you take a series of images through your telescope — whether you're capturing a galaxy or chasing a kilonova — you're not just collecting light from your target. You're also picking up unwanted signals from caused by your camera’s electronics, the telescope optics, the environment or even dust on your sensor. These artifacts can affect the accuracy of your measurements or hide faint sources like kilonovae entirely.
 
 This is where **preprocessing** comes in.
 
 Preprocessing is the essential first step in cleaning up your images before doing any kind of analysis, like identifying a transient or measuring brightness. It allows us to remove unwanted noise and correct uneven lighting across the image so that what we’re seeing is actually from the sky — not the camera.
 
 To do this, we use special calibration images: **bias**, **dark**, **flat**, and sometimes **flat-dark** frames.
+
+That’s why we capture **calibration frames** (bias, dark, flat, and sometimes flat-darks): to measure those unwanted signals separately so we can subtract them out from the actual data.
+
+But here's the catch: calibration only works if it's applied **correctly** — which means matching each light image with the *right* dark, flat, and bias frames. And that’s why **sorting and labeling** are so important, as referenced in "Preparing Raw Data".
 
 ---
 
@@ -81,3 +85,63 @@ The idea is simple: take images of *known nothingness*, *known uniform light*, o
 - Take 15–25 frames per filter, same gain and temperature.
 
 You can use **either bias frames** *or* **flat-darks** to calibrate your flat frames — but not both. If your camera has amp glow, flat-darks are preferred.
+
+---
+
+### Why Sorting Is Essential
+
+If you give your files clear names and organize them by type, most software (like ASTAP, Prism, Siril, etc.) can:
+- Automatically detect which frames are which (light, dark, flat, etc.)
+- Match them by filter, exposure, and temperature
+- Stack only the **correct** images together
+- Apply the **right** calibration frames during preprocessing
+
+Without this, the software might:
+- Fail to calibrate at all
+- Use the wrong calibration frames (causing bad corrections)
+- Require you to sort everything manually
+
+---
+
+### Do We Stack Calibration Frames Too?
+
+Yes — and it's a crucial part of the workflow.
+
+Each type of calibration frame is usually taken **many times** per session:
+- 15–25 darks
+- 15–25 flats (per filter)
+- 50–100 bias frames
+
+Instead of using each one individually, we **combine (stack) them into "master frames"**:
+- A **master bias**
+- A **master dark** (for a specific exposure, gain, and temperature)
+- A **master flat** (for each filter)
+- Optionally, a **master flat-dark**
+
+These master frames are then used to correct all your light images from the same session.
+
+---
+
+### Do I Do This Every Time?
+
+Generally, yes — for each observing session or setup, you’ll need matching master frames. That means:
+- If you change your **filter**, you need a new master flat
+- If you change your **exposure time**, you need a new master dark
+- If you change your **camera temperature**, you may need new darks and flats
+- If your **optical setup changes** (rotator, camera orientation, etc.), you’ll want new flats
+
+Some amateur astronomers build a **library** of master calibration frames for their setup — as long as the conditions match, those masters can be reused.
+
+---
+
+### Summary
+
+Calibration only works when it's **accurate** — and accuracy comes from matching your light images with the right correction frames.
+
+That’s why:
+- We take multiple calibration frames and stack them into **master frames**
+- We sort and label all files clearly
+- We process each light image using the corresponding master dark, flat, and bias
+
+This turns messy raw data into clean, calibrated images — ready to be stacked, analyzed, or submitted to Kilonova Catcher.
+
