@@ -1,1 +1,2 @@
 ## Astrometry 
+# why and how 
