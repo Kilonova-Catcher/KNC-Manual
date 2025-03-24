@@ -352,7 +352,7 @@ texinfo_documents = [
 
 
 def setup(app):
-    app.add_css_file("knc-cookbook-docs.css")
+    app.add_css_file("knc-docs.css")
 
 
 
