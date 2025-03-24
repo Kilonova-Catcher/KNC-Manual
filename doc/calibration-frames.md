@@ -53,6 +53,31 @@ The idea is simple: take images of *known nothingness*, *known uniform light*, o
 - Keep the telescope or camera covered.
 - Take 15–25 dark frames to combine into a **master dark frame**.
 - Be careful: darks must match your lights *exactly* — no scaling is done in most amateur software like ASTAP.
+---
+### Subtraction Workflow: Applying Bias and Dark Frames
+
+Once you’ve collected your calibration frames and created your **master bias** and **master dark** frames, the next step is to apply them to your raw images.
+
+This is a part of pre-processing and it corrects your science (light) frames by removing unwanted electronic and thermal noise.
+
+Let’s say you’re working with a set of raw light frames. Here’s what the subtraction workflow looks like:
+
+```text
+1. Light Frame (raw)
+      └─➤ Contains: signal + bias + dark current + noise
+
+2. Subtract Master Bias
+      ➤ Removes the constant electronic offset
+
+3. Subtract Master Dark
+      ➤ Removes temperature-dependent thermal noise and hot pixels
+
+4. Output: Calibrated Light Frame
+      └─➤ Contains only the true sky signal (plus some random noise)
+```
+So, basically: 
+
+Corrected Image = Raw Light - Master Dark - (Master Bias if needed)
 
 ---
 
@@ -65,11 +90,41 @@ The idea is simple: take images of *known nothingness*, *known uniform light*, o
 - Dust shadows (from particles on the sensor)
 - Uneven pixel sensitivity
 
+These aren’t real astronomical features — they’re artifacts caused by the optical path (filters, lenses, dust, sensor variations). To correct for this, we use **flat field frames**.
+
 **How to take them**:
 - Point at a uniformly lit source (e.g., a white panel, t-shirt over scope, or the sky during twilight).
-- Take enough exposures so your camera’s histogram peaks at about 30–50% (e.g. ~33,000 ADU).
-- Take 15–25 flat frames per filter.
+- Use the **same filter** and optical setup as your light frames
+- Keep the **exposure short**, but bright enough to reach ~30–50% of the camera’s full range (around 20,000–35,000 ADU)
+- Take **15–25 frames per filter**
 - Settings: Same gain and temperature as lights. Exposure time is based on reaching a good brightness, not on matching the lights.
+
+**Pro tip:** If your setup doesn’t change, you can reuse the same flats for multiple nights.
+
+### Creating the Master Flat
+
+Once you have your flat frames:
+1. Load all the flats (per filter) into your preprocessing software
+2. **Subtract the master bias or flat-darks** if needed
+3. Combine them (using median or average) to make a **master flat**
+
+This master flat is a 2D map of how your system distorts even light.
+
+To apply flat correction you are basically, **dividing** each calibrated light frame (bias- and dark-subtracted) by the master flat: Corrected Image = (Light - Dark) / Flat
+
+---
+
+# Be Consistent
+Your master flat should match your lights in:
+- Filter (g, r, i, etc.)
+
+- Binning (e.g., 1x1)
+
+- Optical configuration (no focus shifts!)
+
+- Camera gain and temperature (ideally)
+
+If anything changes — refocus, change filters, rotate the camera — you’ll need a new flat.
 
 ---
 
@@ -85,21 +140,6 @@ The idea is simple: take images of *known nothingness*, *known uniform light*, o
 - Take 15–25 frames per filter, same gain and temperature.
 
 You can use **either bias frames** *or* **flat-darks** to calibrate your flat frames — but not both. If your camera has amp glow, flat-darks are preferred.
-
----
-
-### Why Sorting Is Essential
-
-If you give your files clear names and organize them by type, most software (like ASTAP, Prism, Siril, etc.) can:
-- Automatically detect which frames are which (light, dark, flat, etc.)
-- Match them by filter, exposure, and temperature
-- Stack only the **correct** images together
-- Apply the **right** calibration frames during preprocessing
-
-Without this, the software might:
-- Fail to calibrate at all
-- Use the wrong calibration frames (causing bad corrections)
-- Require you to sort everything manually
 
 ---
 
@@ -132,6 +172,19 @@ Generally, yes — for each observing session or setup, you’ll need matching m
 
 Some amateur astronomers build a **library** of master calibration frames for their setup — as long as the conditions match, those masters can be reused.
 
+---
+### Why Sorting Is Essential
+
+If you give your files clear names and organize them by type, most software (like ASTAP, Prism, Siril, etc.) can:
+- Automatically detect which frames are which (light, dark, flat, etc.)
+- Match them by filter, exposure, and temperature
+- Stack only the **correct** images together
+- Apply the **right** calibration frames during preprocessing
+
+Without this, the software might:
+- Fail to calibrate at all
+- Use the wrong calibration frames (causing bad corrections)
+- Require you to sort everything manually
 ---
 
 ### Summary
