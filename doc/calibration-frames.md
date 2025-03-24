@@ -196,5 +196,5 @@ That’s why:
 - We sort and label all files clearly
 - We process each light image using the corresponding master dark, flat, and bias
 
-This turns messy raw data into clean, calibrated images — ready to be stacked, analyzed, or submitted to Kilonova Catcher.
+This turns messy raw data into clean, calibrated images!
 
