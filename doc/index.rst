@@ -11,7 +11,10 @@ User Guide
 
    kilonova-theory
    image-theory
-   preprocessing-theory
+   workflowastro
+   PreparingRawData
+   calibration-frames
+   stacking
 
 .. Indices and tables
 .. ==================
