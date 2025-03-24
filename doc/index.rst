@@ -15,6 +15,8 @@ User Guide
    PreparingRawData
    calibration-frames
    Stacking
+   Astrometry
+   Recc_Software
 
 .. Indices and tables
 .. ==================
