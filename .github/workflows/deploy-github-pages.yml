@@ -39,7 +39,7 @@ jobs:
 
     - name: Make dependencies
       run: |
-        cd doc2 && make html; cd ../
+        cd doc && make html; cd ../
         touch doc/_build/html/.nojekyll
 
     - name: Deploy to GitHub Pages
