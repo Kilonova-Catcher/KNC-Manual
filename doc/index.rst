@@ -14,7 +14,7 @@ User Guide
    workflowastro
    PreparingRawData
    calibration-frames
-   stacking
+   Stacking
 
 .. Indices and tables
 .. ==================
