@@ -37,7 +37,7 @@ They’re also the **optical counterparts** to gravitational wave (GW) events. B
 
 Most kilonova searches start with a **gravitational wave alert**.
 
-When LIGO, Virgo, or KAGRA detect a possible neutron star merger, they send out a **GW alert** through the [Gamma-ray Coordinates Network (GCN)](https://gcn.nasa.gov/). This alert contains:
+When LIGO, Virgo, or KAGRA detect a possible neutron star merger, they send out a **GW alert** through the [General Coordinates Network (GCN)](https://gcn.nasa.gov/). This alert contains:
 - A timestamp of the merger
 - A probability map showing where in the sky it likely happened
 - Information about the source (like if it involved neutron stars)
