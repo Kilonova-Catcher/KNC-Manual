@@ -54,6 +54,8 @@ That’s why we preprocess every image before doing science. We subtract out the
 
 ### Summary
 
+Here is a table to put this into perspective:
+
 | Feature              | Phone Camera                       | Telescope Camera                     |
 |----------------------|-------------------------------------|---------------------------------------|
 | Exposure Time        | < 1 second                         | 30 sec to several minutes             |
@@ -62,5 +64,4 @@ That’s why we preprocess every image before doing science. We subtract out the
 | Goal                 | Aesthetic image                    | Scientific measurement                |
 | Image Appearance     | Bright, colorful, polished         | Raw, noisy, grayscale (at first)      |
 
-Understanding these differences is the first step to mastering astrophotography. And with your help, we’ll be turning those noisy raw images into data that can help uncover the next cosmic event.
 
