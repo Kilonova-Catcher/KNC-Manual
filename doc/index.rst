@@ -17,6 +17,7 @@ User Guide
    Stacking
    Astrometry
    Recc_Software
+   Recc_Software2
 
 .. Indices and tables
 .. ==================
