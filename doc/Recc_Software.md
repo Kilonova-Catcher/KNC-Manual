@@ -1,6 +1,4 @@
-## Reccomended Software by KNC Members
-
-### Preprocessing astronomical images with Prism V11 software (Marc Serrau's Workflow)
+## Reccomended Software by KNC Members: Preprocessing astronomical images with Prism V11 software (Marc Serrau's Workflow)
 
 Astronomical images directly obtained with a numerical camera are always affected by defects due to the optics and the electronic of camera. 
 
@@ -29,7 +27,7 @@ When all master frames are available, the preprocessing can be done. This operat
 
 All the following hard copy of the Prism software panels are in french but the tool may be configured in English. The following documentation is based on the V11 version of the tool but older version may be used. The appendix will give some links to some websites.
 
-#### 2 Capturing Flat Frames
+### 2 Capturing Flat Frames
 
 Flat frames can be obtained making pictures of a uniformly illuminated screen or of the bright sky during of the dusk or the dawn. If so, the telescope will be at sidereal standstill. No clouds or the Moon should be present. The time of exposure have to be short in order to minimize the temperature effect in the sensor. This is especially important for filters corresponding to the sensor low response bandwidth (for instance infrared filter for CMOS sensor).
 
@@ -42,7 +40,7 @@ With Prism, it is possible to use a script that permits to take frame on the dus
 ![Artifact Image](media/ms2.png)
 
 
-#### 3 Capturing Dark and Offset frames
+### 3 Capturing Dark and Offset frames
 
 Offset and dark frames will be obtained by taking images without light entering the telescope. The telescope tube must be closed to avoid small light pollution that may be present in the surroundings. The temperature of the camera have to controlled to an acceptable level that will be used during observations. It is important to take care of that point when making dark and offset frames during the winter. During the summer night the camera may not reach the same temperature due to the limitation of the cooler.
 
@@ -52,7 +50,7 @@ Again, with Prism, it is possible to use a script that permits to take offset an
 
 ![Artifact Image](media/ms3.png)
 
-#### 4 Making Masters
+### 4 Making Masters
 
 Prism offers a plain function to create masters from flat frames, offset or dark frames. Accessible trough the menu (below)
 ![Artifact Image](media/ms5.png)
@@ -75,7 +73,7 @@ Several master flat or master dark may be created in the same operation dependin
 
 Masters will be kept in a directory (a library of master frames) with names giving a clear signification to their contents. Doing so will help further application of the master during preprocessing,
 
-#### 5 And finally, the preprocessing phase...
+### 5 And finally, the preprocessing phase...
 
 Having master files for offset dark and flat permit us to do the preprocessing easily. The following Prism menu
 ![Artifact Image](media/ms6.png)
@@ -84,8 +82,6 @@ or the ⟳ button are dedicated to this operation:
 The next panel will do the preprocessing with several options :
 ![Artifact Image](media/ms7.png)
 ![Artifact Image](media/ms8.png)
-
-
 
 
 
