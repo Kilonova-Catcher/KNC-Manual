@@ -55,9 +55,9 @@ Again, with Prism, it is possible to use a script that permits to take offset an
 #### 4 Making Masters
 
 Prism offers a plain function to create masters from flat frames, offset or dark frames. Accessible trough the menu (below)
-![Artifact Image](media/ms4.png)
+![Artifact Image](media/ms5.png)
 
-or the single button (below). ![Artifact Image](media/ms5.png)
+or the single button (below). ![Artifact Image](media/ms4.png)
 
 A panel appears where it is possible to loads the single frames of each kind.
 
@@ -74,8 +74,6 @@ Flats may have different means and will be normalized from the first frame.
 Several master flat or master dark may be created in the same operation depending on the name of the files.
 
 Masters will be kept in a directory (a library of master frames) with names giving a clear signification to their contents. Doing so will help further application of the master during preprocessing,
-
-![Artifact Image](media/ms6.png)
 
 #### 5 And finally, the preprocessing phase...
 
