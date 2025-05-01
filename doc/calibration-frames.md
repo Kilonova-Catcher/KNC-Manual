@@ -1,6 +1,6 @@
 ## Preprocessing: Cleaning Your Raw Images
 
-When you take a series of images through your telescope — whether you're capturing a galaxy or chasing a kilonova — you're not just collecting light from your target. You're also picking up unwanted signals from caused by your camera’s electronics, the telescope optics, the environment or even dust on your sensor. These artifacts can affect the accuracy of your measurements or hide faint sources like kilonovae entirely.
+When you take a series of images through your telescope — whether you’re capturing a galaxy or chasing a kilonova — you’re not just collecting light from your target. You’re also picking up unwanted signals from your camera’s electronics, the telescope optics, the environment or even dust on your sensor. These artifacts can affect the accuracy of your measurements or hide faint sources like kilonovae entirely.
 
 This is where **preprocessing** comes in.
 
