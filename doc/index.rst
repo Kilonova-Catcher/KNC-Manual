@@ -18,6 +18,7 @@ User Guide
    Astrometry
    Recc_Software
    Recc_Software2
+   KNC_Protocol
 
 .. Indices and tables
 .. ==================
