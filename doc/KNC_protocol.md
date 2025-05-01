@@ -28,7 +28,7 @@ This guide outlines how to register with **Kilonova Catcher (KNC)**, connect you
 Our alerts are based on gravitational wave (LIGO/Virgo/KAGRA) and GRB satellite triggers. Alerts are decoded and filtered by **ICARE**, GRANDMA’s custom software, and distributed via:
 
 - **Email**
-    - Your dashboard at [kilonovacatcher.in2p3.fr](https://kilonovacatcher.in2p3.fr)
+- Your dashboard at [kilonovacatcher.in2p3.fr](https://kilonovacatcher.in2p3.fr)
 - **Slack**:
   - `#private-trigger-observations`: for event notifications and observing plans
   - `#observations`: for coordinating active follow-up and sharing coverage
@@ -40,7 +40,7 @@ Our alerts are based on gravitational wave (LIGO/Virgo/KAGRA) and GRB satellite 
 
   Please make sure to also join `#kilonova-catcher-news`!
  
-  ![Guide Image 2](media/guide_pg2.png)
+  ![Guide Image 2](media/guide_pg3.png)
   
 ### 4. Connecting to Slack
 
@@ -58,7 +58,6 @@ Plans include:
 - Expected brightness (e.g., for a kilonova similar to AT2017gfo)
 - A skymap with your pointings
 
-![Guide Image 3](media/guide_pg3.png)
 ![Guide Image 4](media/guide_pg4.png)
 
 ### 6. What Is Expected of You
