@@ -1,6 +1,6 @@
-## Reccomended Software by KNC Members: Preprocessing astronomical images with Prism V11 software (Marc Serrau's Workflow)
+## Recommended Software by KNC Members: Preprocessing astronomical images with Prism V11 software (Marc Serrau’s Workflow)
 
-Astronomical images directly obtained with a numerical camera are always affected by defects due to the optics and the electronic of camera. 
+Astronomical images directly obtained with a numerical camera are always affected by defects due to the optics and the electronics of the camera. 
 
 Below, for instance, a rough image obtained after a 300s exposure. You can see several effects like shadows, vignetting, very bright pixels alone. Several effects like satellites tracks or cosmic rays signatures, defects in the sensor (bad column for instance) or blooming due to saturation in CCD sensor cannot be removed automatically.
 
@@ -29,24 +29,25 @@ All the following hard copy of the Prism software panels are in french but the t
 
 ### 2 Capturing Flat Frames
 
-Flat frames can be obtained making pictures of a uniformly illuminated screen or of the bright sky during of the dusk or the dawn. If so, the telescope will be at sidereal standstill. No clouds or the Moon should be present. The time of exposure have to be short in order to minimize the temperature effect in the sensor. This is especially important for filters corresponding to the sensor low response bandwidth (for instance infrared filter for CMOS sensor).
+Flat frames can be obtained making pictures of a uniformly illuminated screen or of the bright sky during dusk or dawn. If so, the telescope will be at sidereal standstill. No clouds or the Moon should be present. The time of exposure have to be short in order to minimize the temperature effect in the sensor. This is especially important for filters corresponding to the sensor low response bandwidth (for instance infrared filter for CMOS sensor).
 
 If the mechanical configuration does not change night after night, flat frames can be keep for several nights.
 
 The Prism software offers a functionality that takes flat frames automatically for one filter. See the panel on the right.
 
-With Prism, it is possible to use a script that permits to take frame on the dusk for all the filter of a filter wheel.
+With Prism, it is possible to use a script that permits taking frames during dusk for all the filters of a filter wheel.
 
 ![Artifact Image](media/ms2.png)
 
 
 ### 3 Capturing Dark and Offset frames
 
-Offset and dark frames will be obtained by taking images without light entering the telescope. The telescope tube must be closed to avoid small light pollution that may be present in the surroundings. The temperature of the camera have to controlled to an acceptable level that will be used during observations. It is important to take care of that point when making dark and offset frames during the winter. During the summer night the camera may not reach the same temperature due to the limitation of the cooler.
+Offset and dark frames will be obtained by taking images without light entering the telescope. The telescope tube must be closed to avoid small light pollution that may be present in the surroundings. The temperature of the camera has to be controlled to an acceptable level that will be used during observations. It is important to take care of that point when making dark and offset frames during the winter. During the summer night the camera may not reach the same temperature due to the limitation of the cooler.
 
-The Prism software offers two functionality that takes dark and offset frames respectively for one temperature and exposure duration. See panels on the right. For offset, the exposure time will the shorter as possible.
+The Prism software offers two functions that take dark and offset frames respectively for one temperature and exposure duration. See panels on the right. For offset, the exposure time will be as short as possible.
 
 Again, with Prism, it is possible to use a script that permits to take offset and dark frames automatically in one sequence, at the same temperature.
+
 
 ![Artifact Image](media/ms3.png)
 
@@ -57,7 +58,7 @@ Prism offers a plain function to create masters from flat frames, offset or dark
 
 or the single button (below). ![Artifact Image](media/ms4.png)
 
-A panel appears where it is possible to loads the single frames of each kind.
+A panel appears where it is possible to load the single frames of each kind.
 
 Some remarks:
 
@@ -65,7 +66,7 @@ All offsets frames must have the same exposure duration.
 
 All dark frames must have the same exposure duration.
 
-A master offset will subtracted on all flat frames but no dark will be subtracted. Its effect have to be negligible (small duration during flat frame and cooled activated).
+A master offset will be subtracted on all flat frames but no dark will be subtracted. Its effect has to be negligible (small duration during flat frame and cooler activated).
 
 Flats may have different means and will be normalized from the first frame.
 
