@@ -40,7 +40,7 @@
 
 KNC and GRANDMA have already collaborated on several successful campaigns, including follow-up of gravitational wave events and the **SN2023wrk** supernova. These efforts show how professional–citizen partnerships can meaningfully advance discovery in multi-messenger astronomy.
 
-You can find more of KNC-GRANDMA publications [here](https://forge.in2p3.fr/projects/kilonova-catcher/wiki). 
+You can find more about KNC-GRANDMA publications and KNC activity [here](https://forge.in2p3.fr/projects/kilonova-catcher/wiki). 
 If you need access to this website: 
 1. Select Register in the upper right. 
 2. When you get to the following page, make sure to select “Join an existing project” and type in “kilonova-catcher”. Refer to Cristina Andrade and Sarah Antier in the comment section.
