@@ -10,12 +10,14 @@
 
 **GRANDMA/KNC Operations Lead:** Cristina Andrade (Hi!)
 
+![KNC Team](media/knc_team.png)
+
 ---
 
 ### How It Works
 
 1. **Alert Reception**  
-   Potential kilonovae, GRBs, or supernovae are detected and broadcast via NASA’s GCN (Global Coordinates Network). These alerts are automatically ingested into **SkyPortal**, a professional data hub used by GRANDMA.
+   Potential kilonovae, GRBs, or supernovae are detected and broadcast via NASA’s GCN (Global Coordinates Network) or by the LIGO-VIRGO-KAGRA (LVK) Gravitational Wave network of interferometers. These alerts are automatically ingested into **SkyPortal**, a professional data hub used by GRANDMA.
 
 2. **Coordination with GRANDMA**  
    GRANDMA scientists and telescope coordinators use SkyPortal to assign targets and prioritize observations across their global telescope network.
@@ -38,5 +40,9 @@
 
 KNC and GRANDMA have already collaborated on several successful campaigns, including follow-up of gravitational wave events and the **SN2023wrk** supernova. These efforts show how professional–citizen partnerships can meaningfully advance discovery in multi-messenger astronomy.
 
-You can find more of KNC-GRANDMA publications [here](https://forge.in2p3.fr/projects/kilonova-catcher/wiki). If you need access to this website, please email the [KNC Team (grandma.knc@gmail.com)](mailto:grandma.knc@gmail.com) or contact Cristina Andrade on slack/email. 
+You can find more of KNC-GRANDMA publications [here](https://forge.in2p3.fr/projects/kilonova-catcher/wiki). 
+If you need access to this website: 
+1. Select Register in the upper right. 
+2. When you get to the following page, make sure to select “Join an existing project” and type in “kilonova-catcher”. Refer to Cristina Andrade and Sarah Antier in the comment section.
+3. Then, email or contact myself through Slack to gain access
 
