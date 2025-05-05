@@ -12,7 +12,7 @@ User Guide
    kilonova-theory
    image-theory
    workflowastro
-   KNC_Protocol
+   KNC_protocol
    PreparingRawData
    calibration-frames
    Stacking
