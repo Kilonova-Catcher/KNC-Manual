@@ -1,0 +1,602 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Preparing Your Raw Data &#8212; KNC-manual vUndefined documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/knc-docs.css?v=4c393c42" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=651bf316"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'PreparingRawData';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Preprocessing: Cleaning Your Raw Images" href="calibration-frames.html" />
+    <link rel="prev" title="KNC Protocol: How to Participate in Observations" href="KNC_protocol.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/LOGO_FINAL_J_600.jpg" class="logo__image only-light" alt="KNC-manual vUndefined documentation - Home"/>
+    <script>document.write(`<img src="_static/LOGO_FINAL_J_600.jpg" class="logo__image only-dark" alt="KNC-manual vUndefined documentation - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="KNC_GRANDMA.html">What is Kilonova-Catcher and GRANDMA?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kilonova-theory.html">What Is a Kilonova?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-theory.html">How Astrophotography Images Are Different</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflowastro.html">The Astronomer’s Workflow Diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KNC_protocol.html">KNC Protocol: How to Participate in Observations</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Preparing Your Raw Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calibration-frames.html">Preprocessing: Cleaning Your Raw Images</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Stacking.html">Stacking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Astrometry.html">Astrometry: Pinpointing Where You Are in the Sky</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Recc_Software.html">Recommended Software by KNC Members: Preprocessing astronomical images with Prism V11 software (Marc Serrau’s Workflow)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Recc_Software2.html">Reccomended Software by KNC Members: Image Calibration,Stacking and Photometry with ASTAP (Michael Freeberg’s Workflow)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/nuclear-multimessenger-astronomy/grandma-cookbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/nuclear-multimessenger-astronomy/grandma-cookbook/edit/main/doc/PreparingRawData.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/nuclear-multimessenger-astronomy/grandma-cookbook/issues/new?title=Issue%20on%20page%20%2FPreparingRawData.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/PreparingRawData.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Preparing Your Raw Data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-naming-conventions">File Naming Conventions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fits-files-and-the-importance-of-metadata">FITS Files and The Importance of Metadata</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="preparing-your-raw-data">
+<h1>Preparing Your Raw Data<a class="headerlink" href="#preparing-your-raw-data" title="Link to this heading">#</a></h1>
+<p>Before you dive into preprocessing and stacking your images, it’s important to make sure your files are cleanly organized and contain the right metadata. This saves time, avoids mistakes, and helps ensure your data can be properly calibrated and analyzed — by you or by others.</p>
+<hr class="docutils" />
+<section id="file-naming-conventions">
+<h2>File Naming Conventions<a class="headerlink" href="#file-naming-conventions" title="Link to this heading">#</a></h2>
+<p>Give your files clear, consistent names that describe what they are. This makes it much easier to group them into categories and ensures automated tools can correctly process them.</p>
+<p>A good file name typically includes:</p>
+<ul class="simple">
+<li><p><strong>Target name</strong> (e.g., M31, KN240101)</p></li>
+<li><p><strong>Filter used</strong> (e.g., g, r, i)</p></li>
+<li><p><strong>Exposure time</strong> (e.g., 60s)</p></li>
+<li><p><strong>Frame type</strong> (light, dark, flat, bias) or <strong>Stack</strong></p></li>
+<li><p><strong>Date</strong> or <strong>session ID</strong></p></li>
+<li><p><strong>Your Name</strong></p></li>
+</ul>
+<p><strong>Example file name:</strong> GRB250317B_Freeberg_T180_2025-03-18T04-36-51_Sloan_r_Stack_40x180sec.fits</p>
+<p>Many stacking tools (like ASTAP or Prism) can sort files automatically if your naming system is consistent.</p>
+</section>
+<hr class="docutils" />
+<section id="fits-files-and-the-importance-of-metadata">
+<h2>FITS Files and The Importance of Metadata<a class="headerlink" href="#fits-files-and-the-importance-of-metadata" title="Link to this heading">#</a></h2>
+<p>When working in astronomy, you’ll hear a lot about <strong>FITS files</strong> — and almost all your images from the telescope will be saved in this format.</p>
+<p><strong>FITS</strong> stands for <strong>Flexible Image Transport System</strong>, and it’s the standard file format used in astronomy around the world.</p>
+<p>FITS files are designed for <strong>data</strong>, not aesthetics.</p>
+<p>Unlike JPGs or PNGs, which are meant to look nice on a screen, FITS files are meant to <strong>store scientific information</strong>. Every pixel value in a FITS file corresponds to actual light (photon counts) collected by your camera’s sensor.</p>
+<p>This data is essential for preprocessing, especially when you’re:</p>
+<ul class="simple">
+<li><p>Measuring brightness (photometry)</p></li>
+<li><p>Solving for astrometry (needs RA/DEC, pixel scale, orientation)</p></li>
+<li><p>Detecting faint transients like kilonovae</p></li>
+<li><p>Sharing data across different software and observatories</p></li>
+<li><p>Matching lights with darks (based on exposure time, temperature, gain)</p></li>
+<li><p>Calibrating flats (based on filter)</p></li>
+</ul>
+<p>A FITS file contains two main parts:</p>
+<ol class="arabic simple">
+<li><p><strong>Image Data</strong></p>
+<ul class="simple">
+<li><p>The actual image as a 2D array of numbers (not colors!)</p></li>
+<li><p>Each number corresponds to the light intensity at each pixel</p></li>
+</ul>
+</li>
+<li><p><strong>Header</strong></p>
+<ul class="simple">
+<li><p>A block of metadata stored as text</p></li>
+<li><p>Describes how the image was taken and how it should be interpreted</p></li>
+</ul>
+</li>
+</ol>
+<p>Key metadata often includes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">EXPTIME</span></code> – Exposure time</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FILTER</span></code> – Filter name</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DATE-OBS</span></code> – Date/time of observation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CCD-TEMP</span></code> – Sensor temperature</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OBJECT</span></code> – Target name</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GAIN</span></code> or <code class="docutils literal notranslate"><span class="pre">ISO</span></code> – Camera gain or ISO setting</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BINNING</span></code> – Binning mode (e.g., 1x1 or 2x2)</p></li>
+</ul>
+<p><strong>Tip</strong>: Most software tools will read this metadata automatically. If it’s missing or incorrect, plate solving, stacking, or calibration may fail — so it’s a good habit to double-check your FITS headers using a viewer like:</p>
+<ul class="simple">
+<li><p><strong>Siril</strong></p></li>
+<li><p><strong>FITS Liberator</strong></p></li>
+<li><p><strong>AstroImageJ</strong></p></li>
+<li><p><strong>ASTAP</strong></p></li>
+<li><p><strong>Prism</strong></p></li>
+</ul>
+<hr class="docutils" />
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p>FITS</p></th>
+<th class="head"><p>JPG / PNG</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Purpose</p></td>
+<td><p>Scientific data</p></td>
+<td><p>Display / viewing</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pixel values</p></td>
+<td><p>Real light intensities</p></td>
+<td><p>Compressed RGB values</p></td>
+</tr>
+<tr class="row-even"><td><p>Metadata</p></td>
+<td><p>Extensive header</p></td>
+<td><p>Minimal or none</p></td>
+</tr>
+<tr class="row-odd"><td><p>Editable?</p></td>
+<td><p>Yes (non-destructive)</p></td>
+<td><p>Lossy (data discarded)</p></td>
+</tr>
+<tr class="row-even"><td><p>Used in astronomy?</p></td>
+<td><p>Yes</p></td>
+<td><p>Not for science</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>We always expect FITS files to be delivered.</strong></p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="KNC_protocol.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">KNC Protocol: How to Participate in Observations</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="calibration-frames.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Preprocessing: Cleaning Your Raw Images</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-naming-conventions">File Naming Conventions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fits-files-and-the-importance-of-metadata">FITS Files and The Importance of Metadata</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The KNC Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, The KNC Core Team.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

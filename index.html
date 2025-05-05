@@ -1,0 +1,615 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Kilonova Catcher Manual &#8212; KNC-manual vUndefined documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/knc-docs.css?v=4c393c42" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=651bf316"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="What is Kilonova-Catcher and GRANDMA?" href="KNC_GRANDMA.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/LOGO_FINAL_J_600.jpg" class="logo__image only-light" alt="KNC-manual vUndefined documentation - Home"/>
+    <script>document.write(`<img src="_static/LOGO_FINAL_J_600.jpg" class="logo__image only-dark" alt="KNC-manual vUndefined documentation - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="KNC_GRANDMA.html">What is Kilonova-Catcher and GRANDMA?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kilonova-theory.html">What Is a Kilonova?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-theory.html">How Astrophotography Images Are Different</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflowastro.html">The Astronomer’s Workflow Diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KNC_protocol.html">KNC Protocol: How to Participate in Observations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PreparingRawData.html">Preparing Your Raw Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calibration-frames.html">Preprocessing: Cleaning Your Raw Images</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Stacking.html">Stacking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Astrometry.html">Astrometry: Pinpointing Where You Are in the Sky</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Recc_Software.html">Recommended Software by KNC Members: Preprocessing astronomical images with Prism V11 software (Marc Serrau’s Workflow)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Recc_Software2.html">Reccomended Software by KNC Members: Image Calibration,Stacking and Photometry with ASTAP (Michael Freeberg’s Workflow)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/nuclear-multimessenger-astronomy/grandma-cookbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/nuclear-multimessenger-astronomy/grandma-cookbook/edit/main/doc/index.rst" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/nuclear-multimessenger-astronomy/grandma-cookbook/issues/new?title=Issue%20on%20page%20%2Findex.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/index.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Kilonova Catcher Manual</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-guide">User Guide</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="kilonova-catcher-manual">
+<h1>Kilonova Catcher Manual<a class="headerlink" href="#kilonova-catcher-manual" title="Link to this heading">#</a></h1>
+<img alt="_images/knc_connecttoGW.jpeg" src="_images/knc_connecttoGW.jpeg" />
+<section id="user-guide">
+<h2>User Guide<a class="headerlink" href="#user-guide" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="KNC_GRANDMA.html">What is Kilonova-Catcher and GRANDMA?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="KNC_GRANDMA.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="KNC_GRANDMA.html#real-impact">Real Impact</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kilonova-theory.html">What Is a Kilonova?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kilonova-theory.html#where-do-kilonovae-come-from">Where Do Kilonovae Come From?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kilonova-theory.html#why-are-kilonovae-important">Why Are Kilonovae Important?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kilonova-theory.html#how-do-we-find-them">How Do We Find Them?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kilonova-theory.html#what-does-a-kilonova-light-curve-look-like">What Does a Kilonova Light Curve Look Like?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="image-theory.html">How Astrophotography Images Are Different</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="image-theory.html#low-light-long-exposures">1. Low Light, Long Exposures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="image-theory.html#no-color-at-first">2. No Color… At First</a></li>
+<li class="toctree-l2"><a class="reference internal" href="image-theory.html#scientific-detail-over-appearance">3. Scientific Detail Over Appearance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="image-theory.html#raw-images-are-messy">4. Raw Images Are Messy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="image-theory.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="workflowastro.html">The Astronomer’s Workflow Diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KNC_protocol.html">KNC Protocol: How to Participate in Observations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="KNC_protocol.html#how-to-register">1. How to Register</a></li>
+<li class="toctree-l2"><a class="reference internal" href="KNC_protocol.html#add-your-telescope">2. Add Your Telescope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="KNC_protocol.html#how-knc-sends-alerts">3. How KNC Sends Alerts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="KNC_protocol.html#connecting-to-slack">4. Connecting to Slack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="KNC_protocol.html#what-happens-during-an-alert">5. What Happens During an Alert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="KNC_protocol.html#what-is-expected-of-you">6. What Is Expected of You</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="KNC_protocol.html#fits-file-requirements">FITS File Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="KNC_protocol.html#revisiting-fields-and-coordination">7. Revisiting Fields and Coordination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="KNC_protocol.html#how-we-interact-with-grandma">8. How We Interact With GRANDMA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="KNC_protocol.html#supporting-documents">9. Supporting Documents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="KNC_protocol.html#kilonova-catcher-guidebook-pdf">Kilonova Catcher Guidebook (PDF)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="KNC_protocol.html#astronomers-guide-pdf">Astronomer’s Guide (PDF)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="KNC_protocol.html#quick-checklist">10. Quick Checklist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="KNC_protocol.html#contact-us">11. Contact Us</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="PreparingRawData.html">Preparing Your Raw Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="PreparingRawData.html#file-naming-conventions">File Naming Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PreparingRawData.html#fits-files-and-the-importance-of-metadata">FITS Files and The Importance of Metadata</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="calibration-frames.html">Preprocessing: Cleaning Your Raw Images</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="calibration-frames.html#why-do-we-use-calibration-frames">Why Do We Use Calibration Frames?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calibration-frames.html#bias-frames">Bias Frames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calibration-frames.html#dark-frames">Dark Frames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calibration-frames.html#subtraction-workflow-applying-bias-and-dark-frames">Subtraction Workflow: Applying Bias and Dark Frames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calibration-frames.html#flat-frames">Flat Frames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calibration-frames.html#creating-the-master-flat">Creating the Master Flat</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="calibration-frames.html#be-consistent">Be Consistent</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="calibration-frames.html#flat-dark-frames">Flat-Dark Frames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calibration-frames.html#do-we-stack-calibration-frames-too">Do We Stack Calibration Frames Too?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calibration-frames.html#do-i-do-this-every-time">Do I Do This Every Time?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calibration-frames.html#why-sorting-is-essential">Why Sorting Is Essential</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calibration-frames.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Stacking.html">Stacking</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Stacking.html#signal-vs-noise">Signal vs. Noise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Stacking.html#benefits-of-stacking">Benefits of Stacking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Stacking.html#how-many-frames-should-i-stack">How Many Frames Should I Stack?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Stacking.html#tools-for-stacking">Tools for Stacking</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Astrometry.html">Astrometry: Pinpointing Where You Are in the Sky</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Astrometry.html#what-is-astrometry">What Is Astrometry?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Astrometry.html#why-is-astrometry-important">Why Is Astrometry Important?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Astrometry.html#astrometry-in-gravitational-wave-follow-up">Astrometry in Gravitational Wave Follow-Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Astrometry.html#what-is-plate-solving">What Is Plate Solving?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Astrometry.html#how-to-perform-astrometry">How to Perform Astrometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Astrometry.html#how-to-know-it-worked">How to Know It Worked</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Astrometry.html#how-to-use-astrometry-net-online-plate-solver">How to Use Astrometry.net (Online Plate Solver)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Astrometry.html#step-by-step-instructions">Step-by-Step Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Astrometry.html#notes">Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Astrometry.html#troubleshooting-why-didnt-my-plate-solve-work">Troubleshooting: Why Didn’t My Plate Solve Work?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Astrometry.html#image-has-no-stars-or-very-few-stars">1. Image Has No Stars or Very Few Stars</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Astrometry.html#image-was-over-processed">2. Image Was Over-Processed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Astrometry.html#noisy-or-uncalibrated-image">3. Noisy or Uncalibrated Image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Astrometry.html#incorrect-image-scale-or-metadata">4. Incorrect Image Scale or Metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Astrometry.html#obstructed-or-distorted-star-field">5. Obstructed or Distorted Star Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Astrometry.html#upload-format-issue">6. Upload Format Issue</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Astrometry.html#related-tools-and-websites">Related Tools and Websites</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Astrometry.html#astrometry-net">Astrometry.net</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Astrometry.html#gaia-archive">Gaia Archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Astrometry.html#astap">ASTAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Astrometry.html#prism-software">Prism Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Astrometry.html#cds-vizier-catalog-access">CDS VizieR Catalog Access</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Recc_Software.html">Recommended Software by KNC Members: Preprocessing astronomical images with Prism V11 software (Marc Serrau’s Workflow)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Recc_Software.html#capturing-flat-frames">2 Capturing Flat Frames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Recc_Software.html#capturing-dark-and-offset-frames">3 Capturing Dark and Offset frames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Recc_Software.html#making-masters">4 Making Masters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Recc_Software.html#and-finally-the-preprocessing-phase">5 And finally, the preprocessing phase…</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Recc_Software2.html">Reccomended Software by KNC Members: Image Calibration,Stacking and Photometry with ASTAP (Michael Freeberg’s Workflow)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Recc_Software2.html#astap">ASTAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Recc_Software2.html#astap-database-selection">ASTAP Database Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Recc_Software2.html#calibration-frames">Calibration Frames</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="KNC_GRANDMA.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">What is Kilonova-Catcher and GRANDMA?</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-guide">User Guide</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The KNC Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, The KNC Core Team.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

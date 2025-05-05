@@ -1,0 +1,718 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Preprocessing: Cleaning Your Raw Images &#8212; KNC-manual vUndefined documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/knc-docs.css?v=4c393c42" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=651bf316"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'calibration-frames';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Stacking" href="Stacking.html" />
+    <link rel="prev" title="Preparing Your Raw Data" href="PreparingRawData.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/LOGO_FINAL_J_600.jpg" class="logo__image only-light" alt="KNC-manual vUndefined documentation - Home"/>
+    <script>document.write(`<img src="_static/LOGO_FINAL_J_600.jpg" class="logo__image only-dark" alt="KNC-manual vUndefined documentation - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="KNC_GRANDMA.html">What is Kilonova-Catcher and GRANDMA?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kilonova-theory.html">What Is a Kilonova?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image-theory.html">How Astrophotography Images Are Different</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflowastro.html">The Astronomer’s Workflow Diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KNC_protocol.html">KNC Protocol: How to Participate in Observations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PreparingRawData.html">Preparing Your Raw Data</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Preprocessing: Cleaning Your Raw Images</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Stacking.html">Stacking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Astrometry.html">Astrometry: Pinpointing Where You Are in the Sky</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Recc_Software.html">Recommended Software by KNC Members: Preprocessing astronomical images with Prism V11 software (Marc Serrau’s Workflow)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Recc_Software2.html">Reccomended Software by KNC Members: Image Calibration,Stacking and Photometry with ASTAP (Michael Freeberg’s Workflow)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/nuclear-multimessenger-astronomy/grandma-cookbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/nuclear-multimessenger-astronomy/grandma-cookbook/edit/main/doc/calibration-frames.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/nuclear-multimessenger-astronomy/grandma-cookbook/issues/new?title=Issue%20on%20page%20%2Fcalibration-frames.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/calibration-frames.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Preprocessing: Cleaning Your Raw Images</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Preprocessing: Cleaning Your Raw Images</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-use-calibration-frames">Why Do We Use Calibration Frames?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bias-frames">Bias Frames</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dark-frames">Dark Frames</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subtraction-workflow-applying-bias-and-dark-frames">Subtraction Workflow: Applying Bias and Dark Frames</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flat-frames">Flat Frames</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-master-flat">Creating the Master Flat</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#be-consistent">Be Consistent</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flat-dark-frames">Flat-Dark Frames</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#do-we-stack-calibration-frames-too">Do We Stack Calibration Frames Too?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#do-i-do-this-every-time">Do I Do This Every Time?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-sorting-is-essential">Why Sorting Is Essential</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="preprocessing-cleaning-your-raw-images">
+<h1>Preprocessing: Cleaning Your Raw Images<a class="headerlink" href="#preprocessing-cleaning-your-raw-images" title="Link to this heading">#</a></h1>
+<p>When you take a series of images through your telescope — whether you’re capturing a galaxy or chasing a kilonova — you’re not just collecting light from your target. You’re also picking up unwanted signals from your camera’s electronics, the telescope optics, the environment or even dust on your sensor. These artifacts can affect the accuracy of your measurements or hide faint sources like kilonovae entirely.</p>
+<p>This is where <strong>preprocessing</strong> comes in.</p>
+<p>Preprocessing is the essential first step in cleaning up your images before doing any kind of analysis, like identifying a transient or measuring brightness. It allows us to remove unwanted noise and correct uneven lighting across the image so that what we’re seeing is actually from the sky — not the camera.</p>
+<p>To do this, we use special calibration images: <strong>bias</strong>, <strong>dark</strong>, <strong>flat</strong>, and sometimes <strong>flat-dark</strong> frames.</p>
+<p>That’s why we capture <strong>calibration frames</strong> (bias, dark, flat, and sometimes flat-darks): to measure those unwanted signals separately so we can subtract them out from the actual data.</p>
+<p>But here’s the catch: calibration only works if it’s applied <strong>correctly</strong> — which means matching each light image with the <em>right</em> dark, flat, and bias frames. And that’s why <strong>sorting and labeling</strong> are so important, as referenced in “Preparing Raw Data”.</p>
+<hr class="docutils" />
+<section id="why-do-we-use-calibration-frames">
+<h2>Why Do We Use Calibration Frames?<a class="headerlink" href="#why-do-we-use-calibration-frames" title="Link to this heading">#</a></h2>
+<p>Every camera introduces some amount of error into your data. Whether it’s thermal noise, pixel sensitivity differences, or shadows caused by dust, these effects can build up and distort your final stacked image.</p>
+<p>Calibration frames help correct for:</p>
+<ul class="simple">
+<li><p><strong>Electronic noise</strong></p></li>
+<li><p><strong>Thermal noise (from heat in your camera sensor)</strong></p></li>
+<li><p><strong>Shadows and vignetting</strong></p></li>
+<li><p><strong>Uneven sensor response across the field</strong></p></li>
+</ul>
+<p>The idea is simple: take images of <em>known nothingness</em>, <em>known uniform light</em>, or <em>matched exposure noise</em>, and then use them to subtract or divide out imperfections from your actual science frames.</p>
+</section>
+<hr class="docutils" />
+<section id="bias-frames">
+<h2>Bias Frames<a class="headerlink" href="#bias-frames" title="Link to this heading">#</a></h2>
+<p><strong>What they are</strong>: Bias frames are the shortest possible exposure your camera can take, with the shutter closed or lens cap on. These capture the small electronic offset (or “readout noise”) introduced by the camera whenever it reads data from the sensor.</p>
+<p><strong>Why we take them</strong>: To measure the base-level noise of the sensor — so we can subtract it from every other frame (including flats and darks).</p>
+<p><strong>How to take them</strong>:</p>
+<ul class="simple">
+<li><p>Use your camera’s shortest exposure time (often less than 0.01s).</p></li>
+<li><p>Keep the lens cap or telescope cover on.</p></li>
+<li><p>Take 50–100 bias frames to combine into a <strong>master bias frame</strong>.</p></li>
+<li><p>Settings (gain, temperature) should match your light frames.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="dark-frames">
+<h2>Dark Frames<a class="headerlink" href="#dark-frames" title="Link to this heading">#</a></h2>
+<p><strong>What they are</strong>: Dark frames are taken with the same exposure time, gain, and temperature as your science (light) images — but with the shutter closed or lens cap on. These capture <strong>thermal noise</strong> and <strong>hot pixels</strong>.</p>
+<p><strong>Why we take them</strong>: To subtract temperature-dependent noise and hot pixels from your light images.</p>
+<p><strong>How to take them</strong>:</p>
+<ul class="simple">
+<li><p>Same camera settings as your lights: exposure time, gain, temperature.</p></li>
+<li><p>Keep the telescope or camera covered.</p></li>
+<li><p>Take 15–25 dark frames to combine into a <strong>master dark frame</strong>.</p></li>
+<li><p>Be careful: darks must match your lights <em>exactly</em> — no scaling is done in most amateur software like ASTAP.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="subtraction-workflow-applying-bias-and-dark-frames">
+<h2>Subtraction Workflow: Applying Bias and Dark Frames<a class="headerlink" href="#subtraction-workflow-applying-bias-and-dark-frames" title="Link to this heading">#</a></h2>
+<p>Once you’ve collected your calibration frames and created your <strong>master bias</strong> and <strong>master dark</strong> frames, the next step is to apply them to your raw images.</p>
+<p>This is a part of pre-processing and it corrects your science (light) frames by removing unwanted electronic and thermal noise.</p>
+<p>Let’s say you’re working with a set of raw light frames. Here’s what the subtraction workflow looks like:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>1. Light Frame (raw)
+      └─➤ Contains: signal + bias + dark current + noise
+
+2. Subtract Master Bias
+      ➤ Removes the constant electronic offset
+
+3. Subtract Master Dark
+      ➤ Removes temperature-dependent thermal noise and hot pixels
+
+4. Output: Calibrated Light Frame
+      └─➤ Contains only the true sky signal (plus some random noise)
+</pre></div>
+</div>
+<p>So, basically:</p>
+<p>Corrected Image = Raw Light - Master Dark - (Master Bias if needed)</p>
+</section>
+<hr class="docutils" />
+<section id="flat-frames">
+<h2>Flat Frames<a class="headerlink" href="#flat-frames" title="Link to this heading">#</a></h2>
+<p><strong>What they are</strong>: Flat frames are images of a uniformly lit surface (like the twilight sky or a light panel). They show how light is unevenly recorded across your sensor due to dust, shadows, and lens imperfections.</p>
+<p><strong>Why we take them</strong>: To correct for:</p>
+<ul class="simple">
+<li><p>Vignetting (darkening toward the corners)</p></li>
+<li><p>Dust shadows (from particles on the sensor)</p></li>
+<li><p>Uneven pixel sensitivity</p></li>
+</ul>
+<p>These aren’t real astronomical features — they’re artifacts caused by the optical path (filters, lenses, dust, sensor variations). To correct for this, we use <strong>flat field frames</strong>.</p>
+<p><strong>How to take them</strong>:</p>
+<ul class="simple">
+<li><p>Point at a uniformly lit source (e.g., a white panel, t-shirt over scope, or the sky during twilight).</p></li>
+<li><p>Use the <strong>same filter</strong> and optical setup as your light frames</p></li>
+<li><p>Keep the <strong>exposure short</strong>, but bright enough to reach ~30–50% of the camera’s full range (around 20,000–35,000 ADU)</p></li>
+<li><p>Take <strong>15–25 frames per filter</strong></p></li>
+<li><p>Settings: Same gain and temperature as lights. Exposure time is based on reaching a good brightness, not on matching the lights.</p></li>
+</ul>
+<p><strong>Pro tip:</strong> If your setup doesn’t change, you can reuse the same flats for multiple nights.</p>
+</section>
+<section id="creating-the-master-flat">
+<h2>Creating the Master Flat<a class="headerlink" href="#creating-the-master-flat" title="Link to this heading">#</a></h2>
+<p>Once you have your flat frames:</p>
+<ol class="arabic simple">
+<li><p>Load all the flats (per filter) into your preprocessing software</p></li>
+<li><p><strong>Subtract the master bias or flat-darks</strong> if needed</p></li>
+<li><p>Combine them (using median or average) to make a <strong>master flat</strong></p></li>
+</ol>
+<p>This master flat is a 2D map of how your system distorts even light.</p>
+<p>To apply flat correction you are basically, <strong>dividing</strong> each calibrated light frame (bias- and dark-subtracted) by the master flat: Corrected Image = (Light - Dark) / Flat</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="be-consistent">
+<h1>Be Consistent<a class="headerlink" href="#be-consistent" title="Link to this heading">#</a></h1>
+<p>Your master flat should match your lights in:</p>
+<ul class="simple">
+<li><p>Filter (g, r, i, etc.)</p></li>
+<li><p>Binning (e.g., 1x1)</p></li>
+<li><p>Optical configuration (no focus shifts!)</p></li>
+<li><p>Camera gain and temperature (ideally)</p></li>
+</ul>
+<p>If anything changes — refocus, change filters, rotate the camera — you’ll need a new flat.</p>
+<hr class="docutils" />
+<section id="flat-dark-frames">
+<h2>Flat-Dark Frames<a class="headerlink" href="#flat-dark-frames" title="Link to this heading">#</a></h2>
+<p><strong>What they are</strong>: Flat-dark frames are like dark frames, but taken with the <strong>same exposure time as your flats</strong>, not your lights.</p>
+<p><strong>Why we take them</strong>: If your camera has <strong>amp glow</strong> or other noise that affects even short exposures, flat-darks help calibrate your flats more accurately than bias frames.</p>
+<p><strong>How to take them</strong>:</p>
+<ul class="simple">
+<li><p>Cover the telescope or use the shutter.</p></li>
+<li><p>Use the <strong>same exposure time as your flat frames</strong>.</p></li>
+<li><p>Take 15–25 frames per filter, same gain and temperature.</p></li>
+</ul>
+<p>You can use <strong>either bias frames</strong> <em>or</em> <strong>flat-darks</strong> to calibrate your flat frames — but not both. If your camera has amp glow, flat-darks are preferred.</p>
+<hr class="docutils" />
+</section>
+<section id="do-we-stack-calibration-frames-too">
+<h2>Do We Stack Calibration Frames Too?<a class="headerlink" href="#do-we-stack-calibration-frames-too" title="Link to this heading">#</a></h2>
+<p>Yes — and it’s a crucial part of the workflow.</p>
+<p>Each type of calibration frame is usually taken <strong>many times</strong> per session:</p>
+<ul class="simple">
+<li><p>15–25 darks</p></li>
+<li><p>15–25 flats (per filter)</p></li>
+<li><p>50–100 bias frames</p></li>
+</ul>
+<p>Instead of using each one individually, we <strong>combine (stack) them into “master frames”</strong>:</p>
+<ul class="simple">
+<li><p>A <strong>master bias</strong></p></li>
+<li><p>A <strong>master dark</strong> (for a specific exposure, gain, and temperature)</p></li>
+<li><p>A <strong>master flat</strong> (for each filter)</p></li>
+<li><p>Optionally, a <strong>master flat-dark</strong></p></li>
+</ul>
+<p>These master frames are then used to correct all your light images from the same session.</p>
+<hr class="docutils" />
+</section>
+<section id="do-i-do-this-every-time">
+<h2>Do I Do This Every Time?<a class="headerlink" href="#do-i-do-this-every-time" title="Link to this heading">#</a></h2>
+<p>Generally, yes — for each observing session or setup, you’ll need matching master frames. That means:</p>
+<ul class="simple">
+<li><p>If you change your <strong>filter</strong>, you need a new master flat</p></li>
+<li><p>If you change your <strong>exposure time</strong>, you need a new master dark</p></li>
+<li><p>If you change your <strong>camera temperature</strong>, you may need new darks and flats</p></li>
+<li><p>If your <strong>optical setup changes</strong> (rotator, camera orientation, etc.), you’ll want new flats</p></li>
+</ul>
+<p>Some amateur astronomers build a <strong>library</strong> of master calibration frames for their setup — as long as the conditions match, those masters can be reused.</p>
+<hr class="docutils" />
+</section>
+<section id="why-sorting-is-essential">
+<h2>Why Sorting Is Essential<a class="headerlink" href="#why-sorting-is-essential" title="Link to this heading">#</a></h2>
+<p>If you give your files clear names and organize them by type, most software (like ASTAP, Prism, Siril, etc.) can:</p>
+<ul class="simple">
+<li><p>Automatically detect which frames are which (light, dark, flat, etc.)</p></li>
+<li><p>Match them by filter, exposure, and temperature</p></li>
+<li><p>Stack only the <strong>correct</strong> images together</p></li>
+<li><p>Apply the <strong>right</strong> calibration frames during preprocessing</p></li>
+</ul>
+<p>Without this, the software might:</p>
+<ul class="simple">
+<li><p>Fail to calibrate at all</p></li>
+<li><p>Use the wrong calibration frames (causing bad corrections)</p></li>
+<li><p>Require you to sort everything manually</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<p>Calibration only works when it’s <strong>accurate</strong> — and accuracy comes from matching your light images with the right correction frames.</p>
+<p>That’s why:</p>
+<ul class="simple">
+<li><p>We take multiple calibration frames and stack them into <strong>master frames</strong></p></li>
+<li><p>We sort and label all files clearly</p></li>
+<li><p>We process each light image using the corresponding master dark, flat, and bias</p></li>
+</ul>
+<p>This turns messy raw data into clean, calibrated images!</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="PreparingRawData.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Preparing Your Raw Data</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Stacking.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Stacking</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Preprocessing: Cleaning Your Raw Images</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-use-calibration-frames">Why Do We Use Calibration Frames?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bias-frames">Bias Frames</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dark-frames">Dark Frames</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subtraction-workflow-applying-bias-and-dark-frames">Subtraction Workflow: Applying Bias and Dark Frames</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flat-frames">Flat Frames</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-master-flat">Creating the Master Flat</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#be-consistent">Be Consistent</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flat-dark-frames">Flat-Dark Frames</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#do-we-stack-calibration-frames-too">Do We Stack Calibration Frames Too?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#do-i-do-this-every-time">Do I Do This Every Time?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-sorting-is-essential">Why Sorting Is Essential</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The KNC Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, The KNC Core Team.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
