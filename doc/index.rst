@@ -12,13 +12,13 @@ User Guide
    kilonova-theory
    image-theory
    workflowastro
+   KNC_Protocol
    PreparingRawData
    calibration-frames
    Stacking
    Astrometry
    Recc_Software
    Recc_Software2
-   KNC_Protocol
 
 .. Indices and tables
 .. ==================
